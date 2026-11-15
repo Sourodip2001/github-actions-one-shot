@@ -1,0 +1,29 @@
+
+
+name: CI
+
+on:
+  workflow_dispatch: 
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone code
+        run: echo "cloning code"
+  build:
+    runs-on: ubuntu-slim
+    steps:
+      - name: build using docker
+        run: echo "docker build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: running test cases
+        run: echo "testing app"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy on machine
+        run: echo "deploy on machine"
+  
+
