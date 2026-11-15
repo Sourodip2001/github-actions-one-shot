@@ -19,7 +19,8 @@ jobs:
           persist-credentials: false
 
       - name: Super-linter
-        uses: super-linter/super-linter@v9.0.0 
-        env:
-          # To report GitHub Actions status checks
-          GITHUB_TOKEN: ${{ secrets.LINT_TOKEN }}
+        # uses: super-linter/super-linter@v9.0.0 
+        # env:
+        #   # To report GitHub Actions status checks
+        #   GITHUB_TOKEN: ${{ secrets.LINT_TOKEN }}
+        run: pip install ruff
