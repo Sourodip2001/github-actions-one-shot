@@ -24,3 +24,5 @@ jobs:
         #   # To report GitHub Actions status checks
         #   GITHUB_TOKEN: ${{ secrets.LINT_TOKEN }}
         run: pip install ruff
+      - name: linting
+        run: ruff check .
