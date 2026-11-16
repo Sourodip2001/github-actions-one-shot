@@ -10,6 +10,13 @@ jobs:
     steps:
       - name: clone code
         run: echo "cloning code"
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
   build:
     runs-on: ubuntu-slim
     steps:
